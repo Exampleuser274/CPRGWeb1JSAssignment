@@ -18,35 +18,35 @@ const clearDays = document.getElementById("clear-button");
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
 function addDay(){
     if (this.classList.contains("clicked")===false){
-        this.classList.add("clicked")
-        chosenDays.push(this.id)
-        recalculate()
+        this.classList.add("clicked");
+        chosenDays.push(this.id);
+        recalculate();
     }else{
-        this.classList.remove("clicked")
-        chosenDays.pop(this.id)
-        recalculate()
+        this.classList.remove("clicked");
+        chosenDays.pop(this.id);
+        recalculate();
     }
 
 }
-monday.addEventListener("click",addDay)
-tuesday.addEventListener("click",addDay)
-wednesday.addEventListener("click",addDay)
-thursday.addEventListener("click",addDay)
-friday.addEventListener("click",addDay)
+monday.addEventListener("click",addDay);
+tuesday.addEventListener("click",addDay);
+wednesday.addEventListener("click",addDay);
+thursday.addEventListener("click",addDay);
+friday.addEventListener("click",addDay);
 
 
 
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
 clearDays.addEventListener("click",function(){
-    chosenDays = []
-    monday.classList.remove("clicked")
-    tuesday.classList.remove("clicked")
-    wednesday.classList.remove("clicked")
-    thursday.classList.remove("clicked")
-    friday.classList.remove("clicked")
-    recalculate()
-})
+    chosenDays = [];
+    monday.classList.remove("clicked");
+    tuesday.classList.remove("clicked");
+    wednesday.classList.remove("clicked");
+    thursday.classList.remove("clicked");
+    friday.classList.remove("clicked");
+    recalculate();
+});
 
 
 
@@ -55,11 +55,11 @@ clearDays.addEventListener("click",function(){
 /********* change rate *********/
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
 halfDay.addEventListener("click",function(){
-    dailyRate = 20
-    halfDay.classList.add("clicked")
-    fullDay.classList.remove("clicked")
-    recalculate()
-})
+    dailyRate = 20;
+    halfDay.classList.add("clicked");
+    fullDay.classList.remove("clicked");
+    recalculate();
+});
 
 
 
@@ -67,18 +67,17 @@ halfDay.addEventListener("click",function(){
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
 
 fullDay.addEventListener("click",function(){
-    dailyRate = 35
-    fullDay.classList.add("clicked")
-    halfDay.classList.remove("clicked")
-    recalculate()
-})
+    dailyRate = 35;
+    fullDay.classList.add("clicked");
+    halfDay.classList.remove("clicked");
+    recalculate();
+});
 
 
 
 /********* calculate *********/
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
 function recalculate(){
-    let totalCost = dailyRate * chosenDays.length
-    calculatedCost.innerHTML = totalCost
+    let totalCost = dailyRate * chosenDays.length;
+    calculatedCost.innerHTML = totalCost;
 }
-
