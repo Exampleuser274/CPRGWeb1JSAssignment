@@ -19,7 +19,7 @@ body {
   line-height: 1.5;
   margin: 0 auto;
 }
-.index, .contact, .booking-page{
+.index{
     margin-left: 25vw;
     margin-right: 25vw;
 }
@@ -50,6 +50,9 @@ h1{
 h2{
     font-size: clamp(3.6px,1.875vw,36px);
     margin-bottom: clamp(2.4px,1.75vw,24px);
+}
+p{
+    font-size: clamp(0.1rem,1vw,1rem);
 }
 .large-text{
     font-size: clamp(2.4px,1.75vw,24px);
@@ -104,7 +107,7 @@ header img{
     width: clamp(7.5px,10vh,75px);
 }
 .nav-bar{
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .nav-item{
     flex-direction: column;
@@ -130,6 +133,12 @@ header img{
 .flex:has(.fake-button){
     justify-content: space-evenly;
 }
+.index h2{
+    line-height: clamp(3.6px,1.875vw,36px);
+}
+.index p{
+    padding-bottom: 12px;
+}
 /************* bookings page *************/
 
 /* TO-DO:
@@ -143,8 +152,44 @@ header img{
     - all items within the page will be centered within their available space.
 
 */
+.booking-page{
+    width: clamp(60px,31.25vw,600px);
+    margin-left: 34.375vw;
+    text-align: center;
+}
+.booking-page p, .booking-page li{
+    font-size: clamp(1.8px,1.2vw,18px);
+}
 .clicked{
     background-color: #E5AF42;
+}
+.day-selector{
+    margin-bottom: 12px;
+}
+ul{
+    gap: 20px;
+    justify-content: center;
+}
+li{
+    width: 60px;
+    text-align: center;
+}
+li:hover, .small-button:hover{
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}
+.small-button{
+    padding: 5px;
+}
+.top-margin{
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+.booking-page .fake-button{
+    width: clamp(20px,10.4vw,200px);
+    margin-left: 10.425vw
+    
 }
 /************* contact page *************/
 /* TO DO:
@@ -154,3 +199,34 @@ header img{
     - all form input, textarea, and and button elements will have the same font as the rest of the page, a line-height of 24px, a font-size of 16px, and the same border as other buttons on the site. There will be 24px of space below each of these elements.
     - the edges of the button will line up exactly with the text-area element. HINT: time for some math!
 */
+.contact{
+    padding-left: 37.656vw;
+}
+label{
+    font-size: clamp(0.1rem,1.2vw,1rem);
+    width: clamp(15px,7.813vw,150px);
+    text-align: right;
+}
+input, textarea, .contact .fake-button{
+    line-height: 24px;
+    font-size: clamp(1.6px,0.833vw,16px);
+    font-family: "Montserrat", sans-serif;
+    width: clamp(30px,15.625vw,300px);
+    margin-bottom: 24px;
+}
+textarea{
+    height: clamp(15px,13.889vh,150px);
+}
+.contact .flex{
+    gap: 24px;
+}
+.contact button{
+    margin-left: 9.313vw;
+}
+.thanks{
+    font-size: clamp(2.4px,1.25vw,24px);
+    margin-left: 3.5vw;
+}
+div.thanks{
+    margin-left: 4vw;
+}
